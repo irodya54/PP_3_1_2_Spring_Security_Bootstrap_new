@@ -125,7 +125,7 @@ public class User implements UserDetails {
     public boolean isUser() {
         return roles.stream()
                 .map(Role::getRole)
-                .anyMatch(role -> role.equals("USER"));
+                .anyMatch(role -> (role.equals("USER") || role.equals("ADMIN")));
     }
 
 
